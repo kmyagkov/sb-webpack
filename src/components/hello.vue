@@ -2,7 +2,7 @@
   <div>Hello, Vue!!!</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 div {
   color: white;
   background: darkgreen;

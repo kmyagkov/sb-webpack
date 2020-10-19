@@ -1,7 +1,7 @@
 import Vue from 'vue/dist/vue.esm';
 import Hello from './components/hello.vue';
 
-import './assets/global.css';
+import './assets/global.scss';
 
 console.log('Entry point!!');
 
