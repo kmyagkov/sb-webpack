@@ -1,0 +1,27 @@
+{
+  "name": "lectrum-webpack",
+  "version": "1.0.0",
+  "description": "Lectrum intensive webpack project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node \"./webpack/devServer.js\"",
+    "build": "node \"./webpack/build.js\"",
+    "serve": "serve \"./dist\" -s"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "app-root-path": "3.0.0",
+    "chalk": "4.1.0",
+    "clean-webpack-plugin": "3.0.0",
+    "css-loader": "5.0.0",
+    "find-free-port": "^2.0.0",
+    "html-webpack-plugin": "4.5.0",
+    "mini-css-extract-plugin": "1.0.0",
+    "serve": "11.3.2",
+    "style-loader": "2.0.0",
+    "webpack": "4.44.2",
+    "webpack-dev-server": "3.11.0",
+    "webpack-hot-middleware": "2.25.0"
+  }
+}
