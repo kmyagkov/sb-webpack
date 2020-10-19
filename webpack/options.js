@@ -10,6 +10,7 @@ const options = {
     modules: false,
     entrypoints: false
   },
+  ROOT: ROOT_DIR,
   HOST: 'localhost',
   PORT: '3000',
   ENTRY: path.resolve(ROOT_DIR, 'src', 'index.js'),

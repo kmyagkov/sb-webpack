@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const getConfig = require('./config');
+const getConfig = require('./config/webpack.prod');
 const compiler = webpack(getConfig());
 
 const options = require('./options');

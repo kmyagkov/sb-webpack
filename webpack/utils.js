@@ -16,9 +16,14 @@ const logInfo = (message) => {
   console.log(chalk.bold.blueBright(`\n${message}\n`));
 };
 
+const isDev = () => {
+  return process.env.NODE_ENV === 'development';
+}
+
 module.exports = {
   logSuccess,
   logWarning,
   logError,
-  logInfo
+  logInfo,
+  isDev
 };
