@@ -1,7 +1,9 @@
 const chalk = require('chalk');
 
 const logSuccess = (message) => {
-  console.log(chalk.bold.greenBright(`\n${message}\n`));
+  console.log('\n')
+  console.log(chalk.bold.greenBright(`--- ${message}`));
+  console.log('\n')
 };
 
 const logWarning = (message) => {
@@ -18,7 +20,7 @@ const logInfo = (message) => {
 
 const isDev = () => {
   return process.env.NODE_ENV === 'development';
-}
+};
 
 module.exports = {
   logSuccess,

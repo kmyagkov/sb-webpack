@@ -1,8 +1,6 @@
 module.exports = (api) => {
-  // const env = api.env();
-  // api.cache.using(() => env === 'development');
-
-  api.cache.never();
+  const env = api.env();
+  api.cache.using(() => env === 'development');
 
   return {
     presets: [
@@ -11,7 +9,7 @@ module.exports = (api) => {
         '@babel/env',
         {
           debug: false,
-          spec: false,
+          spec: true,
           loose: false,
           modules: false
         }

@@ -1,14 +1,16 @@
 const { merge } = require('webpack-merge');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const getCommonConfig = require('./webpack.common');
+
+const { loadDevCSS } = require('../modules/styles');
 
 module.exports = () => {
   const devConfig = {
-    devtool: false,
-    mode: 'none',
+    devtool: 'cheap-module-eval-source-map',
     plugins: [
-
+      new FriendlyErrorsPlugin()
     ]
   }
 
-  return merge(getCommonConfig(), devConfig);
+  return merge(getCommonConfig(), loadDevCSS(), devConfig);
 };

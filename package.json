@@ -4,9 +4,10 @@
   "description": "Lectrum intensive webpack project",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node \"./webpack/dev.js\"",
-    "build": "node \"./webpack/build.js\"",
-    "serve": "serve \"./dist\" -s"
+    "start": "cross-env NODE_ENV=development node \"./webpack/tasks/dev.js\"",
+    "build": "cross-env NODE_ENV=production node \"./webpack/tasks/build.js\"",
+    "serve": "serve \"./dist\" -s",
+    "analyze": "webpack-bundle-analyzer \"./dist/stats.json\""
   },
   "author": "",
   "license": "ISC",
@@ -21,19 +22,24 @@
     "clean-webpack-plugin": "3.0.0",
     "cross-env": "^7.0.2",
     "css-loader": "5.0.0",
+    "file-loader": "^6.1.1",
     "find-free-port": "^2.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "4.5.0",
     "mini-css-extract-plugin": "1.0.0",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.3",
     "serve": "11.3.2",
     "style-loader": "2.0.0",
+    "svg-sprite-loader": "^5.0.0",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12",
     "webpack": "4.44.2",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-dev-server": "3.11.0",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-merge": "5.2.0"
+    "webpack-merge": "5.2.0",
+    "webpackbar": "^4.0.0"
   },
   "dependencies": {
     "vue": "^2.6.12"

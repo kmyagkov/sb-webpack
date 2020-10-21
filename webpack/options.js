@@ -22,7 +22,6 @@ const options = {
     verbose: true
   },
   HTML_WEBPACK_PLUGIN: {
-    // title: 'Lectrum Webpack', не работает с чистым HTML... Возможно, нужен лоадер
     template: './src/index.html'
   }
 }

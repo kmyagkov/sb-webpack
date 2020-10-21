@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue.esm';
+import Vue from 'vue/dist/vue.runtime.min';
 import Hello from './components/hello.vue';
 
 import './assets/global.scss';
@@ -14,7 +14,5 @@ class Developer {
 console.log(new Developer().code());
 
 new Vue({
-  components: {
-    Hello
-  }
+  render: h => h(Hello)
 }).$mount('.app');
