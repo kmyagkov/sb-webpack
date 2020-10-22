@@ -23,8 +23,8 @@ const loadProdCSS = () => ({
   },
   plugins: [
     new MiniCSSExtractPlugin({
-      filename: 'css/[name].[id].css',
-      chunkFilename: 'css/[name].[id].css'
+      filename: 'css/[name].[contenthash].css',
+      chunkFilename: 'css/[name].[contenthash].css'
     })
   ]
 });

@@ -1,5 +1,6 @@
 const path = require('path');
 const { path: ROOT_DIR } = require('app-root-path');
+const { isDev } = require('./utils');
 
 const options = {
   COMPILER_OPTIONS: {
@@ -16,7 +17,10 @@ const options = {
   ENTRY: path.resolve(ROOT_DIR, 'src', 'index.js'),
   OUTPUT: {
     path: path.resolve(ROOT_DIR, 'dist'),
-    filename: 'bundle.js'
+    publicPath: '/',
+    filename: `js/[name].[${isDev() ? 'hash' : 'chunkhash'}].js`, // entry point bundle
+    chunkFilename: 'js/[name].[chunkhash].js', // chunk name
+    hashDigestLength: 8
   },
   CLEAN_WEBPACK_PLUGIN: {
     verbose: true

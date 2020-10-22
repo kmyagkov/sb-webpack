@@ -35,7 +35,7 @@ module.exports = () => {
               loader: 'file-loader',
               options: {
                 limit: 4096,
-                name: 'images/[name].[hash:8].[ext]'
+                name: 'images/[name].[contenthash].[ext]'
               }
             },
           ],
@@ -50,7 +50,7 @@ module.exports = () => {
               loader: 'svg-sprite-loader',
               options: {
                 extract: true,
-                spriteFilename: 'svg/sprite.[hash:8].svg'
+                spriteFilename: 'svg/sprite.[contenthash].svg'
               }
             },
             {
@@ -65,7 +65,7 @@ module.exports = () => {
               loader: 'file-loader',
               options: {
                 limit: 4096,
-                name: 'fonts/[name].[hash:8].[ext]'
+                name: 'fonts/[name].[contenthash].[ext]'
               }
             }
           ]

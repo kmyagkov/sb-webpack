@@ -11,11 +11,14 @@ module.exports = (api) => {
           debug: false,
           spec: true,
           loose: false,
-          modules: false
+          modules: false,
+          useBuiltIns: 'usage',
+          corejs: 3
         }
       ]
     ],
     plugins: [
+      '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-proposal-class-properties'
     ]
   };

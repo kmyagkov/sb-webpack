@@ -10,7 +10,44 @@ module.exports = () => {
   const prodConfig = {
     devtool: false,
     optimization: {
-      minimize: true
+      nodeEnv: 'production',
+      minimize: true,
+      noEmitOnErrors: true,
+      removeEmptyChunks: true,
+      mergeDuplicateChunks: true,
+      removeAvailableModules: true,
+      occurrenceOrder: true, // removed in webpack 5
+      concatenateModules: true,
+      providedExports: true,
+      usedExports: true,
+      sideEffects: true,
+      namedModules: false, // removed in webpack 5
+      moduleIds: false,
+      namedChunks: true,
+      splitChunks: {
+        chunks: 'all',
+        minSize: 30000,
+        minChunks: 1,
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '.',
+        name: true,
+        cacheGroups: {
+          vendors: {
+            chunks: 'initial',
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
+      },
+      runtimeChunk: {
+        name: entrypoint => `runtime.${entrypoint.name}`
+      }
     },
     plugins: [
       new WebpackBundleAnalyzer({
